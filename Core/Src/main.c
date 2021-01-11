@@ -96,7 +96,7 @@ int main(void)
   MX_TIM2_Init();
   MX_IWDG_Init();
   /* USER CODE BEGIN 2 */
-	HAL_TIM_Base_Start(&htim2);
+	HAL_TIM_Base_Start_IT(&htim2);
 	Filter( );
 	Can_Interrupt_Eable( );
 	BASE_Init(&Robo_Base);
