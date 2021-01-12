@@ -17,14 +17,15 @@ typedef struct Node
 Node* create(Node* head;);
 void add(Node* head,int number);
 void backspace(Node* head,int number);
-void combine();
+//void combine();
 void print(Node* head);
 int main()
 {
 	Node* head=NULL;
 	head=create(head); 
-
-
+	print(head);
+	add(head,2);
+	print(head);
 }
 
 Node* create ( Node* head )
@@ -58,9 +59,9 @@ void add(Node* head,int number)
 	add->next =NULL;
 	add->data =number;
 	Node* q;
-	for ( q = head -> data , search = head; search ; q = search , search = search -> next )
+	for ( q = head  , search = head; search->next!=NULL ; q = search , search = search -> next )
 	{
-		if( q<=number&&number<=search->data )
+		if( (q->data)<=number&&number<=search->data )
 		{	search -> next = add;
 			add->ago =search;
 		}
@@ -84,8 +85,7 @@ void print(Node* head)
 {
 	Node* search;
 	search = head;
-	while(search != NULL) //? ?while???if? ???!!!
-		//???????info->data != NULL???!!
+	while(search != NULL)
 	{
 		printf("%d ",search -> data);
 		search = search -> next;
